@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import NewsItemClass from './NewsItemClass'
 import Spinner from './Spinner';
+import apiKey from '../NewsAPIKey'
+
 
 export default class NewsClass extends Component {
     articles = [
@@ -93,7 +95,8 @@ export default class NewsClass extends Component {
     }
 
     async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=a7397cd2ad504e0fa4ab73a3a9df812e&q=sport&page=1&pageSize=${this.props.pageSize}`;
+        console.log(apiKey)
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=${apiKey}&q=sport&page=1&pageSize=${this.props.pageSize}`;
         try {
             this.setState({loading:true})
             const response = await fetch(url);
@@ -111,7 +114,7 @@ export default class NewsClass extends Component {
     }
 
     handlePreviousPage = async ()=>{
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=a7397cd2ad504e0fa4ab73a3a9df812e&q=sport&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=${apiKey}&q=sport&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
         try {
             this.setState({loading:true})
             const response = await fetch(url);
@@ -129,7 +132,7 @@ export default class NewsClass extends Component {
 
     handleNextPage = async ()=>{
         if (this.state.page+1 <= Math.ceil(this.state.totalResults/this.props.pageSize)) {
-            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=a7397cd2ad504e0fa4ab73a3a9df812e&q=sport&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
+            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=${apiKey}&q=sport&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
         try {
             this.setState({loading:true})
             const response = await fetch(url);
