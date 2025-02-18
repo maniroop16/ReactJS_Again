@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-reactjs_app\src\NewsAPIKey.js
+/src/NewsAPIKey.js
 
 # testing
 /coverage
