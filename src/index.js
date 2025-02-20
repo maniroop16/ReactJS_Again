@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
-import Appclass from './App_class';
+// import Appclass from './App_class';
+import AppFunction from './App_function';
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Appclass />
+    <AppFunction />
   </React.StrictMode>
 );
 

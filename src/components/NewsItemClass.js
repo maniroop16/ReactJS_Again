@@ -1,14 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class NewsItemClass extends Component {
-  render() {
-    let { title, description, imageUrl, newsUrl, updatedTime, Author,source  } = this.props;
+const NewsItemClass = (props)=> {
+    let { title, description, imageUrl, newsUrl, updatedTime, Author,source  } = props;
     return (
       <div>
         <div className="card" style={{ width: "20rem" }}>
-        <diV style={{display:"flex", justifyContent:"flex-end", position:"absolute", right:"0"}}>
+        <div style={{display:"flex", justifyContent:"flex-end", position:"absolute", right:"0"}}>
           <span className="badge rounded-pill bg-danger">{source}</span>
-          </diV>
+          </div>
           <img
             src={imageUrl?imageUrl:"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iRCnxVg4XLkU/v1/1200x800.jpg"}
             className="card-img-top"
@@ -27,4 +26,6 @@ export default class NewsItemClass extends Component {
       </div>
     );
   }
-}
+
+
+export default NewsItemClass 
